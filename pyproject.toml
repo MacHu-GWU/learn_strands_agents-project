@@ -24,7 +24,7 @@ maintainers = [
 ]
 keywords = []
 readme = "README.rst"
-requires-python = ">=3.9,<4.0"
+requires-python = ">=3.12,<4.0"
 # Full list of classifiers: https://pypi.org/classifiers/
 classifier = [
     "Development Status :: 4 - Beta",
@@ -43,6 +43,13 @@ classifier = [
 # Core Dependencies
 # ------------------------------------------------------------------------------
 dependencies = [
+    "boto3>=1.35.99,<2.0.0", # Official AWS Python SDK
+    "boto-session-manager>=1.8.1,<2.0.0",
+    "s3pathlib>=2.3.6,<3.0.0", # A pathlib-style object-oriented wrapper for Amazon S3
+    "rich>=14.0.0,<15.0.0", # pretty print
+    "strands-agents>=1.11.0,<2.0.0",
+    "strands-agents-tools>=0.2.12,<1.0.0",
+    "strands-agents-builder>=0.1.10,<1.0.0",
 ]
 
 # ------------------------------------------------------------------------------
@@ -61,7 +68,6 @@ dev = [
     "twine>=6.0.0,<7.0.0", # distribute package to PyPI
     "wheel>=0.45.0,<1.0.0", # build wheel package
     "build>=1.2.1,<2.0.0", # build source distribution
-    "rich>=13.8.1,<14.0.0", # pretty print
 ]
 
 # ------------------------------------------------------------------------------
@@ -125,7 +131,7 @@ exclude = [
 # python workflow tool config
 [tool.pywf]
 # The specific python version you use for local development
-dev_python = "3.11.8"
+dev_python = "3.12.11"
 # --- github.com
 github_account = "MacHu-GWU"
 # Create GitHub token in https://github.com/settings/tokens and put the token in
